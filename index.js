@@ -7,6 +7,33 @@
     APENAS qnd clico no botão a função é executada.
     isso impacta o processamento, principalmente em códigos robustos */
 
+
+// tirar o texto de fundo
+let label = document.getElementsByTagName('label')[0];
+let input = document.getElementsByTagName('input')[0];
+
+label.onclick = function () {
+    label.style.display = 'none'; // info dentro do input some qnd clico dentro da caixinha
+    input.focus(); 
+}
+
+input.onblur = function () {
+    if(!this.value) label.style.display = 'block'
+}
+
+let label2 = document.getElementsByTagName('label')[1];
+let input2 = document.getElementsByTagName('input')[1];
+
+label2.onclick = function() {
+    label2.style.display = 'none';
+    input2.focus();
+}
+
+input2.onblur = function () {
+    if(!this.value) label2.style.display = 'block';
+}
+
+
 const horasDiarias = 8  // alterar a quantidade de horas aqui, caso precise.
 
 const calcularSalario = () => {   // arrow function
